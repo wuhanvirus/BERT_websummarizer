@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+a{
+    text-decoration: none;
+    color:bisque;
+}
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #263343;
+    font-size: 24px;
+    padding: 0.5rem 1rem;
+}
+
+.icon{
+    list-style: none;
+    color: bisque;
+    display: flex;
+}
+
+.icon > li{
+    padding: 0.5rem 0.75rem
+}
+.mid{
+    text-align: center;
+    margin: 5rem;
+}
