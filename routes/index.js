@@ -1,37 +1,27 @@
 var express = require('express');
 var router = express.Router();
-const { PythonShell } = require('python-shell');
-let options = {
-  mode: 'text',
-  pythonPath: '',
-  pythonOptions: ['-u'],
-  scriptPath: '',
-  args: '',
-  encoding: 'utf8'
-};
+var request = require('request');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index.ejs', {});
+    res.render('index.ejs', {});
 });
 
 router.post('/', function (req, res, next) {
-  options.args = req.body.plain;
+    var plain_text = req.body.plain;        //  20자 이하면 그대로 반환하게
 
-  PythonShell.run(__dirname + '/../bertsum.py', options, function (err, results) {
-    if (err) throw err;
-
-    //받아온 메시지 전처리 과정
-
-    let data = results[0].replace(`b\'`, '').replace(`\'`, '');
-    let buff = Buffer.from(data, 'base64');
-    let text = buff.toString('utf-8');
-
+    request({
+        method: 'POST',
+        url: 'http://127.0.0.1:5000/fapi',
+        json: {
+            "text": plain_text
+        }
+    }, (error, response, body) => {
+        console.log(error);
+        res.render('index2.ejs', { plaint: req.body.plain, sum: body.text });
+    });
     // 글자0 글자로 되면 원래 글자 그대로 내뱉게만들자잇
     // 값기다렸다가 내뱉게 ex (로딩등으로, 프론트엔드 로딩화면도 구현하자)
-    res.render('index2.ejs', { plaint: req.body.plain, sum: text })
-  });
-
 });
 //홈페이지 새로고침 안되면서 할 수 있는 방법이 있나 찾아보자잇!
 module.exports = router;
