@@ -28,20 +28,24 @@
     </section>
 
     <section class="mid">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="https://" aria-label="link input"
-                aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-        </div>
+        <p>요약할 텍스트가 본문으로 있는 URL을 작성해주세요. (URL 방식은 영어나 한국어 텍스트인 본문만 가능)</p>
+        <form id="Form" action="/turl" method="POST">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="http(s)://" name= "text_url" aria-label="link input"
+                    aria-describedby="button-addon2">
+                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Button</button>
+            </div>
+        </form>
+        <!-- <p>요약할 본문이 있는 txt 파일을 업로드해주세요.</p>
         <div class="input-group">
             <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04"
                 aria-label="Upload">
             <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
-        </div>
+        </div> -->
         <div class="textzone">
-            <form id = "Form" action="/" method="POST">
+            <form id="Form" action="/" method="POST">
                 <div class="form-floating">
-                    <textarea class="form-control" placeholder="원문" name = "plain" id="floatingTextarea2"
+                    <textarea class="form-control" placeholder="원문" name="plain" id="floatingTextarea2"
                         style="height: 50vh; width: 40%; float: left;"><%= plaint %></textarea>
                     <label for="floatingTextarea2">원문</label>
                 </div>
