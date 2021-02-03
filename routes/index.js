@@ -9,12 +9,15 @@ router.get('/', function (req, res, next) {
 
 router.post('/', function (req, res, next) {
     var plain_text = req.body.plain;        //  20자 이하면 그대로 반환하게
-
+    var three = false;
+    if(req.body.three==='')
+        three = true;
     request({
         method: 'POST',
         url: 'http://127.0.0.1:5000/fapi',
         json: {
-            "text": plain_text
+            "text": plain_text,
+            "line": three
         }
     }, (error, response, body) => {
         console.log(error);

@@ -17,14 +17,20 @@ class CreateUser(Resource):
         try:
             parser = reqparse.RequestParser()
             parser.add_argument('text', type=str)
+            parser.add_argument('line', type=bool)
             # parser.add_argument('email', type=str)
             # parser.add_argument('user_name', type=str)
             # parser.add_argument('password', type=str)
             args = parser.parse_args()
             _text = args['text']
-            result = model(_text)
-            summary = "".join(result)
+            _threeswitch = args['line']
 
+            if _threeswitch:
+                result = model(_text, num_sentences=3)
+            else:
+                result = model(_text)
+            
+            summary = "".join(result)
             # _userEmail = args['email']
             # _userName = args['user_name']
             # _userPassword = args['password']

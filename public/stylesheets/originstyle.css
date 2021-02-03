@@ -28,33 +28,10 @@ a{
 
 .mid{
     text-align: center;
-    margin: 2% 12%;
+    margin: 4rem 5rem;
     height: 75vh;
-    width: 850px;
     
 }
-.notice{
-    margin-bottom: 2rem; 
-}
 .textzone{
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
-#floatingTextarea2{
-    height: 50vh; 
-    width: 425px; 
-    float: left;
-}
-#fta{
-    height: 50vh; 
-    width: 425px; 
-    float: left;
-}
-.form-check2{
-    float: left;
-    margin-top : 2vh;
-}
-#plainbtn{
-    padding-left: 100px;
-    margin-right: 300px;
-    margin-top : 1.5vh;
-} 
