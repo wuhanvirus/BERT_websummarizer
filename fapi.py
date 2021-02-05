@@ -26,9 +26,9 @@ class CreateUser(Resource):
             _threeswitch = args['line']
 
             if _threeswitch:
-                result = model(_text, num_sentences=3)
+                result = model(_text, max_length=450, num_sentences=3)
             else:
-                result = model(_text)
+                result = model(_text, max_length=450)
             
             summary = "".join(result)
             # _userEmail = args['email']
@@ -55,7 +55,7 @@ class CreateUser2(Resource):
                 article = g_k.extract(url=t_url)
                 result = article.cleaned_text
             
-            tmp = model(result)
+            tmp = model(result, max_length=450)
             summary = "".join(tmp)
 
             return {
