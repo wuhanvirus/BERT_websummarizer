@@ -15,8 +15,8 @@ app.use(
   helmet.contentSecurityPolicy({
       directives: {
           defaultSrc: ["'self'", 'https://ka-f.fontawesome.com', 'https://fonts.gstatic.com'],
-          scriptSrc: ["'self'", 'https://ka-f.fontawesome.com',"https://kit.fontawesome.com",],
-          styleSrc: ["'self'","'unsafe-inline'", 'https://cdn.jsdelivr.net/','https://ka-f.fontawesome.com', 'https://fonts.googleapis.com'],
+          scriptSrc: ["'self'", 'https://ka-f.fontawesome.com',"https://kit.fontawesome.com",], //kit추가, unsafe지움
+          styleSrc: ["'self'","'unsafe-inline'", 'https://cdn.jsdelivr.net/','https://ka-f.fontawesome.com', 'https://fonts.googleapis.com'], //unsafe필요, jsdelivr추가
           connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
           reportUri: '/report-violation',   // endpoint to get violation reports
       },
@@ -65,9 +65,5 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error',{errmsg:err.message, errurl:req.url, errnum: err.status});
 });
-//이거 왜들어가있는겨? 아래거 익스프레스랑 뭔 차이지?
-// app.listen(3000, function(){
-//   console.log('Example App listening on port 3000');
-// });
 
 module.exports = app;
