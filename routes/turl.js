@@ -19,11 +19,11 @@ router.post('/', function (req, res, next) {
     }, (error, response, body) => {
         console.log(error);
         if(body.error)
-            res.render('index2.ejs', { plaint: t_url, sum: "입력한 URL에 문제가 있을 수 있습니다. \n확인 부탁드립니다.\n\nThere may be a problem with the URL you entered. Please check." });
+            res.render('index2.ejs', { plaint: t_url, sum: "죄송합니다. 입력한 URL에서 본문을 찾지 못했습니다.\n\nSorry, the body was not found at the URL you entered." });
         else if(body.sum.length)
             res.render('index2.ejs', { plaint: body.plain, sum: body.sum });
         else
-            res.render('index2.ejs', { plaint: body.plain, sum: "텍스트가 짧거나, 문장 수가 너무 적습니다.\n\nShort text or too few sentences." });
+            res.render('index2.ejs', { plaint: body.plain, sum: "텍스트의 길이 혹은 문장의 수가 부적합합니다.\n\nThe length of the text or the number of sentences is invalid." });
     });
     // 값기다렸다가 내뱉게 ex (로딩등으로, 프론트엔드 로딩화면도 구현하자)
 });

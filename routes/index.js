@@ -24,7 +24,7 @@ router.post('/', function (req, res, next) {
         if(body.text.length)
             res.render('index2.ejs', { plaint: req.body.plain, sum: body.text });
         else
-            res.render('index2.ejs', { plaint: req.body.plain, sum: "텍스트가 짧거나, 문장 수가 적습니다.\n\nThe text is short or the number of sentences is low." });
+            res.render('index2.ejs', { plaint: req.body.plain, sum: "텍스트의 길이 혹은 문장의 수가 부적합합니다.\n\nThe length of the text or the number of sentences is invalid." });
     });
     // 글자0 글자로 되면 원래 글자 그대로 내뱉게만들자잇
     // 값기다렸다가 내뱉게 ex (로딩등으로, 프론트엔드 로딩화면도 구현하자)

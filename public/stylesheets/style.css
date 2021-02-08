@@ -1,7 +1,6 @@
 body {
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
-    
 }
 a{
     text-decoration: none;
@@ -28,10 +27,14 @@ a{
 
 .mid{
     text-align: center;
-    margin: 2% 12%;
+    margin: 5vh auto;
     height: 75vh;
-    width: 850px;
-    
+    width: 60%;
+}
+.bot{
+    position: sticky;
+    bottom:0;
+    width: fit-content;
 }
 .notice{
     margin-bottom: 2rem; 
@@ -41,20 +44,49 @@ a{
 }
 #floatingTextarea2{
     height: 50vh; 
-    width: 425px; 
+    width: 50%; 
     float: left;
+    resize: none;
 }
 #fta{
     height: 50vh; 
-    width: 425px; 
+    width: 50%; 
     float: left;
+    resize: none;
+}
+.btnn{
+    float: left;
+    width: 50%;
 }
 .form-check2{
     float: left;
-    margin-top : 4vh;
+    margin-top : 3vh;
 }
 #plainbtn{
-    padding-left: 100px;
-    margin-right: 302px;
-    margin-top : 3vh;
-} 
+    float:right;
+    padding-left: 15%;
+    margin-top : 2vh;
+}
+@media screen and (max-width:800px){
+    .notice2{
+        display:none;
+    }
+    .mid{
+        margin: 5vh auto;
+        height: 75vh;
+        width: 90%;
+    }
+    #floatingTextarea2{
+        height: 25vh;
+        width: 100%;
+        resize: none;
+    }
+    #fta{
+        height: 25vh; 
+        width: 100%;
+        resize: none;
+    }
+    .btnn{
+        width: 100%;
+    }
+}
