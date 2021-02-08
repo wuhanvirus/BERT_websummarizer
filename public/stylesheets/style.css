@@ -67,7 +67,7 @@ a{
     padding-left: 15%;
     margin-top : 2vh;
 }
-@media screen and (max-width:800px){
+@media all and (max-width:800px){
     .notice2{
         display:none;
     }

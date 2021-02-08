@@ -11,6 +11,18 @@ var usersRouter = require('./routes/users');
 var turlRouter = require('./routes/turl');
 
 var app = express();
+app.use(
+  helmet.contentSecurityPolicy({
+      directives: {
+          defaultSrc: ["'self'", 'https://ka-f.fontawesome.com', 'https://fonts.gstatic.com'],
+          scriptSrc: ["'self'", 'https://ka-f.fontawesome.com',"https://kit.fontawesome.com",],
+          styleSrc: ["'self'","'unsafe-inline'", 'https://cdn.jsdelivr.net/','https://ka-f.fontawesome.com', 'https://fonts.googleapis.com'],
+          connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
+          reportUri: '/report-violation',   // endpoint to get violation reports
+      },
+      reportOnly: false,  // true for nonblocking mode, just to see violations
+      safari5: false
+}));
 app.use(helmet.dnsPrefetchControl());
 app.use(helmet.expectCt());
 app.use(helmet.frameguard());
@@ -48,10 +60,10 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
+  // console.log(req);
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error',{errmsg:err.message, errurl:req.url, errnum: err.status});
 });
 //이거 왜들어가있는겨? 아래거 익스프레스랑 뭔 차이지?
 // app.listen(3000, function(){
