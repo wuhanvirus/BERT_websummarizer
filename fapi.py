@@ -58,7 +58,6 @@ class CreateUser2(Resource):
             
             tmp = model(result, max_length=450)
             summary = "".join(tmp)
-            print(summary)
             return {
                 'plain': result,
                 'sum': summary
