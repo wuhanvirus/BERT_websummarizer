@@ -1,5 +1,4 @@
 body {
-<<<<<<< HEAD
     height: 100vh;
     background: url(../images/333.jpg) no-repeat center center/cover;      
     margin: 0;
@@ -7,29 +6,16 @@ body {
     box-shadow: inset 50px 30px 250px 30px #5a4f4f;
 }
 
-=======
-    margin: 0;
-    font-family: 'Source Sans Pro', sans-serif;
-}
->>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
 a{
     text-decoration: none;
     color:bisque;
 }
-<<<<<<< HEAD
 
 .top {
     display: flex;
     justify-content: space-between;                     
     align-items: center;
     background-color: rgba(38, 51, 67,0.9);
-=======
-.top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #263343;
->>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
     font-size: 24px;
     padding: 0.5rem 1rem ;
 }
@@ -45,16 +31,12 @@ a{
 }
 
 .mid{
-<<<<<<< HEAD
     
-=======
->>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
     text-align: center;
     margin: 5vh auto;
     height: 75vh;
     width: 60%;
 }
-<<<<<<< HEAD
 
 .bot{
     position: sticky;
@@ -77,59 +59,32 @@ a{
 }
 
 #floatingTextarea2{ 
-=======
-.bot{
-    position: sticky;
-    bottom:0;
-    width: fit-content;
-}
-.notice{
-    margin-bottom: 2rem; 
-}
-.textzone{
-    margin-top: 2rem;
-}
-#floatingTextarea2{
->>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
     height: 50vh; 
     width: 50%; 
     float: left;
     resize: none;
-<<<<<<< HEAD
 
     background-color: rgba( 255, 255, 255, 0.5 );
 }
 
 #fta{   
-=======
-}
-#fta{
->>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
     height: 50vh; 
     width: 50%; 
     float: left;
     resize: none;
-<<<<<<< HEAD
 
     background-color: rgba( 255, 255, 255, 0.5 );
 }
 
-=======
-}
->>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
 .btnn{
     float: left;
     width: 50%;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
 .form-check2{
     float: left;
     margin-top : 3vh;
 }
-<<<<<<< HEAD
 
 #plainbtn{
     float:right;
@@ -149,6 +104,7 @@ a{
     padding-right: 8px;
     background-color: rgba( 255, 255, 255, 0.5 );
     color: rgb(133, 132, 132);
+    cursor: pointer;
 }
 
 #flexCheckDefault{  
@@ -161,49 +117,26 @@ a{
         display:none;
     }
 
-=======
-#plainbtn{
-    float:right;
-    padding-left: 15%;
-    margin-top : 2vh;
-}
-@media all and (max-width:800px){
-    .notice2{
-        display:none;
-    }
->>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
     .mid{
         margin: 5vh auto;
         height: 75vh;
         width: 90%;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
     #floatingTextarea2{
         height: 25vh;
         width: 100%;
         resize: none;
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
     #fta{
         height: 25vh; 
         width: 100%;
         resize: none;
     }
-<<<<<<< HEAD
 
     .btnn{
         width: 100%;
     }
 
-=======
-    .btnn{
-        width: 100%;
-    }
->>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
 }
