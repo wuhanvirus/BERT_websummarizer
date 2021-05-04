@@ -1,6 +1,6 @@
 # BERT_websummarizer      
 
-
+      
 디렉토리내에서
 
 **nodemon npm start**    (80 포트 개방)
