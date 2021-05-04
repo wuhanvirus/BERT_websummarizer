@@ -20,6 +20,12 @@ class CreateUser(Resource):
             parser = reqparse.RequestParser()
             parser.add_argument('text', type=str)
             parser.add_argument('line', type=bool)
+<<<<<<< HEAD
+=======
+            # parser.add_argument('email', type=str)
+            # parser.add_argument('user_name', type=str)
+            # parser.add_argument('password', type=str)
+>>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
             args = parser.parse_args()
             _text = args['text']
             _threeswitch = args['line']
@@ -30,6 +36,12 @@ class CreateUser(Resource):
                 result = model(_text, max_length=450)
             
             summary = "".join(result)
+<<<<<<< HEAD
+=======
+            # _userEmail = args['email']
+            # _userName = args['user_name']
+            # _userPassword = args['password']
+>>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
             return {
                 'text': summary
             }
@@ -52,7 +64,10 @@ class CreateUser2(Resource):
             
             tmp = model(result, max_length=450)
             summary = "".join(tmp)
+<<<<<<< HEAD
             print(summary)
+=======
+>>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
             return {
                 'plain': result,
                 'sum': summary
@@ -60,7 +75,10 @@ class CreateUser2(Resource):
         except Exception as e:
             return {'error': str(e)}
 
+<<<<<<< HEAD
 #   for chrome extensions
+=======
+>>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
 # class CreateUser3(Resource):
 #     def post(self):
 #         try:

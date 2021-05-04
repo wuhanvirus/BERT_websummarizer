@@ -15,7 +15,11 @@ app.use(
   helmet.contentSecurityPolicy({
       directives: {
           defaultSrc: ["'self'", 'https://ka-f.fontawesome.com', 'https://fonts.gstatic.com'],
+<<<<<<< HEAD
           scriptSrc: ["'self'", "'unsafe-inline'", 'https://ka-f.fontawesome.com',"https://kit.fontawesome.com",], //kit추가, unsafe지움
+=======
+          scriptSrc: ["'self'", 'https://ka-f.fontawesome.com',"https://kit.fontawesome.com",], //kit추가, unsafe지움
+>>>>>>> d371e5a441c0761b6195a60b5e932c047b881e9a
           styleSrc: ["'self'","'unsafe-inline'", 'https://cdn.jsdelivr.net/','https://ka-f.fontawesome.com', 'https://fonts.googleapis.com'], //unsafe필요, jsdelivr추가
           connectSrc: ["'self'", 'https://ka-f.fontawesome.com'],
           reportUri: '/report-violation',   // endpoint to get violation reports
