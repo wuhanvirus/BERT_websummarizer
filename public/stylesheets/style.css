@@ -1,0 +1,141 @@
+body {
+    height: 100vh;
+    background: url(../images/333.jpg) no-repeat center center/cover;      
+    margin: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    box-shadow: inset 50px 30px 250px 30px #5a4f4f;
+}
+
+a{
+    text-decoration: none;
+    color:bisque;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;                     
+    align-items: center;
+    background-color: rgba(38, 51, 67,0.9);
+    font-size: 24px;
+    padding: 0.5rem 1rem ;
+}
+
+.icon{
+    list-style: none;
+    color: bisque;
+    display: flex;
+}
+
+.icon > li{
+    padding: 1rem 0.75rem 0.25rem;
+}
+
+.mid{
+    
+    text-align: center;
+    margin: 5vh auto;
+    height: 75vh;
+    width: 60%;
+}
+
+.bot{
+    position: sticky;
+    color:bisque;   
+    bottom:0;
+    width: fit-content;
+}
+
+.notice{
+    margin-bottom: 2rem; 
+}
+
+.textzone{
+    margin-top: 2rem;
+}
+
+#ur{
+
+    background-color: rgba( 255, 255, 255, 0.5 );       
+}
+
+#floatingTextarea2{ 
+    height: 50vh; 
+    width: 50%; 
+    float: left;
+    resize: none;
+
+    background-color: rgba( 255, 255, 255, 0.5 );
+}
+
+#fta{   
+    height: 50vh; 
+    width: 50%; 
+    float: left;
+    resize: none;
+
+    background-color: rgba( 255, 255, 255, 0.5 );
+}
+
+.btnn{
+    float: left;
+    width: 50%;
+}
+
+.form-check2{
+    float: left;
+    margin-top : 3vh;
+}
+
+#plainbtn{
+    float:right;
+    padding-left: 15%;      
+    margin-top : 2vh;
+    border: none;
+    background-color: rgba(83, 69, 134, 0.5);
+}
+
+.cpy{
+    border: none;
+    float:right;
+    font-size: 24px;    
+    border-radius: 8px;
+    margin-top: 1vh;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: rgba( 255, 255, 255, 0.5 );
+    color: rgb(133, 132, 132);
+}
+
+#flexCheckDefault{  
+    opacity: 75%;
+}
+
+@media all and (max-width:800px){
+
+    .notice2{
+        display:none;
+    }
+
+    .mid{
+        margin: 5vh auto;
+        height: 75vh;
+        width: 90%;
+    }
+
+    #floatingTextarea2{
+        height: 25vh;
+        width: 100%;
+        resize: none;
+    }
+
+    #fta{
+        height: 25vh; 
+        width: 100%;
+        resize: none;
+    }
+
+    .btnn{
+        width: 100%;
+    }
+
+}
