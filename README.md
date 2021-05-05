@@ -1,6 +1,6 @@
 # BERT_websummarizer      
 
-## 사용법
+### 사용법
 <br/>
 <br/>
 디렉토리내에서
@@ -25,7 +25,7 @@ after
 ---------------------------------------
 <br/>
 <br/>
-## 작동 예시   
+### 작동 예시   
 <br/>
 <br/>
 ![화면 캡처 2021-05-05 230653](https://user-images.githubusercontent.com/62196278/117154478-d7dbd300-adf6-11eb-8cb3-f6e7c75ad53b.jpg)
