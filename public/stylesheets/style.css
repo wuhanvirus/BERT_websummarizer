@@ -112,6 +112,9 @@ a{
 }
 
 @media all and (max-width:800px){
+    body{
+        box-shadow: none;    
+    }
 
     .notice2{
         display:none;
