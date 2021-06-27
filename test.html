@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple textrank js</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="textrank.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#btn-summary").on("click", function() {
+                var tr = new TextRank($("#origin").val());
+                console.log(tr.getSummarizedOneText());
+                //$("#summrized").text($("#origin").val());
+                $("#summrized").text(tr.getSummarizedThreeText());
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h3 style="display:inline;" >origin text</h3>
+        <button style="display:inline;" id="btn-summary">summarize!</button>
+        <br>
+        <textarea name="" id="origin" cols="50" rows="10"></textarea>
+    </div>
+    <div>
+        <h3>summrized</h3>
+        <div id="summrized"></div>
+    </div>
+</body>
+</html>

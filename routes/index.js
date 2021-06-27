@@ -11,8 +11,6 @@ router.post('/', function (req, res, next) {
     var plain_text = req.body.plain;        //  20자 이하면 그대로 반환하게
     var textrank = new tr(plain_text);
     var sum = textrank.getSummarizedThreeText()
-    console.log();
-    console.log(sum);
 
     if(sum)
         res.render('index2.ejs', { plaint: req.body.plain, sum: sum});
