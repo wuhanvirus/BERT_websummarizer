@@ -35,17 +35,17 @@ router.post('/', function (req, res, next) {
                 btn = !btn;
                 if (foundPos == -1) 
                 {
-                    result_text += ((plain_text.substring(beforePos, plain_text.length)).replace(/([.?!])\s+/g, "$1\n")).replace(/\n+/g, "\n");
+                    result_text += ((plain_text.substring(beforePos, plain_text.length)).replace(/([.?!])(\s*)/g, "$1\n")).replace(/\n+/g, "\n");
                     break;
                 }
                 if(btn)
-                    result_text += ((plain_text.substring(beforePos, foundPos)).replace(/([.?!])\s+/g, "$1\n")).replace(/\n+/g, "\n");
+                    result_text += ((plain_text.substring(beforePos, foundPos)).replace(/([.?!])(\s*)/g, "$1\n")).replace(/\n+/g, "\n");
                 else
                     result_text += "\"" + plain_text.substring(beforePos, foundPos) + "\""; 
                 pos = foundPos + 1;
                 beforePos = pos;    
             }
-            // console.log(result_text);
+            console.log(result_text);
             var textrank = new tr(result_text);
             var sum = textrank.getSummarizedThreeText()
             if(sum)
