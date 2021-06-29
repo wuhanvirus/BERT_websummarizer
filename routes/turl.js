@@ -23,10 +23,31 @@ router.post('/', function (req, res, next) {
             res.render('index2.ejs', { plaint: t_url, sum: "죄송합니다. 입력한 URL에서 본문을 찾지 못했습니다.\n\nSorry, the body was not found at the URL you entered." });
         else if(body.plain.length)
         {
-            var textrank = new tr(body.plain);
+            var plain_text = body.plain;
+            var btn = false;
+            var result_text = "";
+            var beforePos = 0;
+            var pos = 0;
+            // 나중에 스택 이용해서 작은 따옴표까지 처리할 수 있을듯
+            while(1)
+            {
+                let foundPos = plain_text.indexOf("\"", pos);
+                btn = !btn;
+                if (foundPos == -1) 
+                {
+                    result_text += ((plain_text.substring(beforePos, plain_text.length)).replace(/([.?!])\s+/g, "$1\n")).replace(/\n+/g, "\n");
+                    break;
+                }
+                if(btn)
+                    result_text += ((plain_text.substring(beforePos, foundPos)).replace(/([.?!])\s+/g, "$1\n")).replace(/\n+/g, "\n");
+                else
+                    result_text += "\"" + plain_text.substring(beforePos, foundPos) + "\""; 
+                pos = foundPos + 1;
+                beforePos = pos;    
+            }
+            // console.log(result_text);
+            var textrank = new tr(result_text);
             var sum = textrank.getSummarizedThreeText()
-            console.log(body.plain);
-            console.log(sum);
             if(sum)
                 res.render('index2.ejs', { plaint: body.plain, sum: sum });
             else

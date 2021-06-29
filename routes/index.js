@@ -9,7 +9,32 @@ router.get('/', function (req, res, next) {
 });
 router.post('/', function (req, res, next) {
     var plain_text = req.body.plain;        //  20자 이하면 그대로 반환하게
-    var textrank = new tr(plain_text);
+    var btn = false;
+    var result_text = "";
+    var beforePos = 0;
+    var pos = 0;
+    // 나중에 스택 이용해서 작은 따옴표까지 처리할 수 있을듯
+    while(1)
+    {
+        let foundPos = plain_text.indexOf("\"", pos);
+        btn = !btn;
+        if (foundPos == -1) 
+        {
+            result_text += ((plain_text.substring(beforePos, plain_text.length)).replace(/[.?!]\s+/g, "$1\n")).replace(/\n+/g, "\n");
+            break;
+        }
+        if(btn)
+            result_text += ((plain_text.substring(beforePos, foundPos)).replace(/([.?!])\s+/g, "$1\n")).replace(/\n+/g, "\n");
+        else
+            result_text += "\"" + plain_text.substring(beforePos, foundPos) + "\""; 
+        pos = foundPos + 1;
+        beforePos = pos;    
+    }
+    // plain_text = plain_text.replace(/\.\s+/g, ".\n");
+    // console.log (plain_text);
+    // console.log (result_text);
+    // var textrank = new tr(plain_text);
+    var textrank = new tr(result_text);
     var sum = textrank.getSummarizedThreeText()
 
     if(sum)
