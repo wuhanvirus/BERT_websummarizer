@@ -3,7 +3,9 @@
 ## 사용법
 <br/>
 <br/>
-## KOREAN
+
+### KOREAN
+
 <br/>
 <br/>
 디렉토리내에서
@@ -17,7 +19,9 @@
 ---------------------------------------
 <br/>
 <br/>
-## ENGLISH
+
+### ENGLISH
+
 <br/>
 <br/>
 Within the directory
